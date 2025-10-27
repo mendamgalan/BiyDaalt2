@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Stack;
 
 public class CarParking {
-    private static final int MAX_SIZE = 10;
-    private Stack<Car> parking = new Stack<>();
-    private Stack<Car> temp = new Stack<>();
+    public static final int MAX_SIZE = 10;
+    public static Stack<Car> parking = new Stack<>();
+    public Stack<Car> temp = new Stack<>();
 
     public List<String[]> input(String fileName) {
         List<String[]> commands = new ArrayList<>();
@@ -39,7 +39,7 @@ public class CarParking {
         }
     }
 
-    private void arrival(Car car) {
+    public void arrival(Car car) {
         System.out.print("Arrival " + car.plate + " -> ");
         if (parking.size() < MAX_SIZE) {
             parking.push(car);
@@ -49,7 +49,7 @@ public class CarParking {
         }
     }
 
-    private void departure(Car car) {
+    public void departure(Car car) {
         System.out.print("Departure " + car.plate + " -> ");
         if (parking.isEmpty()) {
             System.out.println("Garage is empty.");
@@ -90,5 +90,9 @@ public class CarParking {
                 System.out.println(" - " + c.plate);
             }
         }
+    }
+    public void clear() {
+        parking.clear();
+        temp.clear();
     }
 }

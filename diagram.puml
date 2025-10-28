@@ -1,0 +1,26 @@
+@startuml
+title Car Parking System UML Diagram
+left to right direction
+class Car {
+    - plate : String
+    --
+    + Car(plate : String)
+    + toString() : String
+}
+
+class CarParking {
+    + MAX_SIZE : int
+    + parking : Stack<Car>
+    - temp : Stack<Car>
+    --
+    + input(fileName : String) : List<String[]>
+    + process(commands : List<String[]>) : void
+    + arrival(car : Car) : void
+    + departure(car : Car) : void
+    + output() : void
+    + clear() : void
+}
+
+CarParking *-- Car
+
+@enduml
